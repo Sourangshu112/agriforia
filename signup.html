@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script type="module" src="firebase.js"></script>
+    <script type="module" src="firebasesignup.js"></script>
     <link rel="stylesheet" type="text/css" href="tailwind.css">
     <title>Sign Up</title>
 </head>
@@ -25,14 +25,14 @@
               <input class="p-3 mt-1 rounded-xl border color-black outline-none" type="text" placeholder="Email" required="" id="email">
               <input class="p-3 mt-1 rounded-xl border color-black outline-none" type="text" placeholder="Fullname" required="" id="fullname">
               <div class="relative p-2 rounded-xl border" id="password">
-                <input class="p-2 rounded-xl w-full outline-none" type="password" name="password" placeholder="Password" required="" id="password">
+                <input class="p-2 rounded-xl w-full outline-none" type="password" name="password" placeholder="Password" required="" id="mpassword">
 				<image src="eye.svg">
               </div>
 			  <div class="relative p-2 rounded-xl border" id="password">
                 <input class="p-2 rounded-xl w-full outline-none" type="password" name="password" placeholder="Password" required="" id="cpassword">
 				<image src="eye.svg">
               </div>
-              <button id="spin" class="bg-[#024E1B] rounded-xl text-white py-2 hover:scale-105 duration-300">
+              <button id="spin1" class="bg-[#024E1B] rounded-xl text-white py-2 hover:scale-105 duration-300">
               Sign Up
               </button>
             </form>
@@ -44,7 +44,7 @@
             </div>
             <div class="mt-3 text-xs flex justify-between items-center">
               <p>Have an account?</p>
-              <button class="py-2 px-5 bg-white border rounded-xl hover:scale-110 duration-300 text-black"><a href="index.html">Longin</a></button>
+              <button class="py-2 px-5 bg-white border rounded-xl hover:scale-110 duration-300 text-black"><a href="./index.html">Longin</a></button>
             </div>
           </div>
       
@@ -56,5 +56,30 @@
       </section>
         </div>
 </body>
+
+<script>
+//buyer or seller
+const buyer = document.getElementById("buyer");
+const seller = document.getElementById("seller");
+const type = document.getElementById("userType");
+var usertype = "Buyer";
+seller.style.color = "#024e1b";
+
+type.addEventListener("click", (event) => {
+  if (usertype == "Buyer") {
+    usertype = "Seller";
+    buyer.style.color = "#024e1b";
+    seller.style.color = "white";
+  } else {
+    usertype = "Buyer";
+    seller.style.color = "#024e1b";
+    buyer.style.color = "white";
+  }
+});
+
+</script>
+
+
+
 
 </html>

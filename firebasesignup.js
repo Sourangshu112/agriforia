@@ -6,9 +6,9 @@ import {
   signInWithEmailAndPassword,
 } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-auth.js";
 import {
-  getFireStore,
+  getFirestore,
   setDoc,
-  Doc,
+  doc,
 } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-firestore.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -26,35 +26,16 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-//buyer or seller
-const buyer = document.getElementById("buyer");
-const seller = document.getElementById("seller");
-const type = document.getElementById("userType");
-var usertype = "Buyer";
-seller.style.color = "#024e1b";
-
-type.addEventListener("click", (event) => {
-  if (usertype == "Buyer") {
-    usertype = "Seller";
-    buyer.style.color = "#024e1b";
-    seller.style.color = "white";
-  } else {
-    usertype = "Buyer";
-    seller.style.color = "#024e1b";
-    buyer.style.color = "white";
-  }
-});
-
-const signUp = document.getElementById("spin");
+const signUp = document.getElementById("spin1");
 signUp.addEventListener("click", (event) => {
   event.preventDefault();
   const email = document.getElementById("email").value;
   const fullName = document.getElementById("fullname").value;
-  const password = document.getElementById("password").value;
+  const password = document.getElementById("mpassword").value;
   const cpassword = document.getElementById("cpassword").value;
   if (password == cpassword) {
     const auth = getAuth();
-    const db = getFireStore();
+    const db = getFirestore();
 
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {

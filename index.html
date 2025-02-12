@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="firebaselogin.js"></script>
     <link rel="stylesheet" type="text/css" href="tailwind.css">
     <title>LOGIN</title>
 </head>
@@ -16,9 +17,9 @@
           <div class="px-8 md:px-16">
             <h2 class="font-bold text-3xl">Agriforia</h2>
             <form action="" class="flex flex-col gap-4 ">
-              <input class="p-2 mt-8 rounded-xl border outline-none" type="text" name="" placeholder="Email or Userid" required="">
+              <input class="p-2 mt-8 rounded-xl border outline-none" type="text" name="" placeholder="Email or Userid" required="" id="email">
               <div class="relative p-2 rounded-xl border" id="password">
-                <input class="p-2 rounded-xl w-full outline-none" type="password" name="password" placeholder="Password" required="">
+                <input class="p-2 rounded-xl w-full outline-none" type="password" name="password" placeholder="Password" required="" id="rpassword">
 				<image src="eye.svg">
               </div>
               <button id="spin" class="bg-[#024E1B] rounded-xl text-white py-2 hover:scale-105 duration-300">

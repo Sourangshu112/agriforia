@@ -26,6 +26,25 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
+//buyer or seller
+const buyer = document.getElementById("buyer");
+const seller = document.getElementById("seller");
+const type = document.getElementById("userType");
+var userType = "Buyer";
+seller.style.color = "#024e1b";
+
+type.addEventListener("click", (event) => {
+  if (userType == "Buyer") {
+    userType = "Seller";
+    buyer.style.color = "#024e1b";
+    seller.style.color = "white";
+  } else {
+    userType = "Buyer";
+    seller.style.color = "#024e1b";
+    buyer.style.color = "white";
+  }
+});
+
 const signUp = document.getElementById("spin1");
 signUp.addEventListener("click", (event) => {
   event.preventDefault();
@@ -40,9 +59,11 @@ signUp.addEventListener("click", (event) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
+        console.log(userType);
         const userData = {
           email: email,
           name: fullName,
+          type: userType,
         };
         alert("Account created successfully");
         const docRef = doc(db, "users", user.uid);
@@ -52,6 +73,7 @@ signUp.addEventListener("click", (event) => {
           })
           .catch((error) => {
             console.error("error writing document", error);
+            alert(error);
           });
       })
       .catch((error) => {
@@ -61,6 +83,7 @@ signUp.addEventListener("click", (event) => {
         } else {
           alert("unable to create user");
         }
+        alert(errorCode);
       });
   } else {
     alert("Password and confirm password does not match!!");

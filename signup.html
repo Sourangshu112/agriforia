@@ -26,11 +26,11 @@
               <input class="p-3 mt-1 rounded-xl border color-black outline-none" type="text" placeholder="Fullname" required="" id="fullname">
               <div class="relative p-2 rounded-xl border" id="password">
                 <input class="p-2 rounded-xl w-full outline-none" type="password" name="password" placeholder="Password" required="" id="mpassword">
-				<image src="eye.svg">
+				<image src="images/eye.svg" id="eye1">
               </div>
 			  <div class="relative p-2 rounded-xl border" id="password">
                 <input class="p-2 rounded-xl w-full outline-none" type="password" name="password" placeholder="Password" required="" id="cpassword">
-				<image src="eye.svg">
+				<image src="images/eye.svg" id="eye2">
               </div>
               <button id="spin1" class="bg-[#024E1B] rounded-xl text-white py-2 hover:scale-105 duration-300">
               Sign Up
@@ -50,7 +50,7 @@
       
           <!-- image -->
           <div class="md:block hidden w-1/2">
-            <img class="rounded-2xl" src="farmer1.jpg">
+            <img class="rounded-2xl" src="images/farmer1.jpg">
           </div>
         </div>
       </section>
@@ -77,9 +77,35 @@ type.addEventListener("click", (event) => {
   }
 });
 
+//show or hide password
+let show1 = false;
+let show2 = false;
+
+const field1 = document.getElementById('mpassword')
+const button1 = document.getElementById('eye1');
+const field2 = document.getElementById('cpassword');
+const button2 = document.getElementById('eye2');
+
+
+button1.addEventListener('click',(event)=>{
+  if (show1) {
+    show1 = false;
+    field1.type = "password";
+  }else {
+    show1 = true;
+    field1.type = "text";
+  }
+})
+
+button2.addEventListener('click',(event)=>{
+  if (show2) {
+    show2 = false;
+    field2.type = "password";
+  }else {
+    show2 = true;
+    field2.type = "text";
+  }
+})
+
 </script>
-
-
-
-
 </html>

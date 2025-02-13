@@ -5,11 +5,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-auth.js";
-import {
-  getFirestore,
-  setDoc,
-  doc,
-} from "https://www.gstatic.com/firebasejs/11.3.0/firebase-firestore.js";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 

@@ -3,25 +3,139 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HOMEPAGE</title>
+    <title>Agriforia - Online Agriculture Shopping</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="firebasehomepage.js"></script>
   </head>
   <body>
-    <div>
-      <h1>WORK IN PROGRESS</h1>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-success">
+      <div class="container">
+        <a class="navbar-brand text-white" href="#" id="name">Welcome ! </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Cart</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="index.html">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Search Bar -->
+    <div class="container m-3">
+      <input
+        type="text"
+        id="search"
+        class="form-control"
+        placeholder="Search for agricultural products..."
+      />
     </div>
+
+    <!-- Banner -->
+    <div class="banner">
+      <h1>Welcome to Agriforia</h1>
+      <p>Buy fresh produce directly from farmers!</p>
+    </div>
+
+    <!-- Product Categories -->
+    <div class="container categories">
+      <h3>Categories</h3>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="category-card">
+            <img src="images/fruits.jpg" alt="Fruits" />
+            <p>Fruits</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="category-card">
+            <img src="images/vegetables.jpg" alt="Vegetables" />
+            <p>Vegetables</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="category-card">
+            <img src="images/grains.jpg" alt="Grains" />
+            <p>Grains</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="category-card">
+            <img src="images/dairy.jpg" alt="Dairy" />
+            <p>Dairy</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured Products -->
+    <div class="container products">
+      <h3>Featured Products</h3>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="product-card">
+            <img src="images/apple.jpg" alt="Apple" />
+            <p>Fresh Apples</p>
+            <p class="price">₹120/kg</p>
+            <button class="btn btn-success">Buy Now</button>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="product-card">
+            <img src="images/tomato.jpg" alt="Tomato" />
+            <p>Organic Tomatoes</p>
+            <p class="price">₹80/kg</p>
+            <button class="btn btn-success">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-success text-white text-center p-3">
+      &copy; 2025 Agriforia. All rights reserved.
+    </footer>
+
+    <script>
+      document.getElementById("search").addEventListener("keyup", function () {
+        let query = this.value.toLowerCase();
+        let products = document.querySelectorAll(".product-card");
+
+        products.forEach((product) => {
+          let name = product.querySelector("p").innerText.toLowerCase();
+          if (name.includes(query)) {
+            product.style.display = "block";
+          } else {
+            product.style.display = "none";
+          }
+        });
+      });
+    </script>
   </body>
-  <style>
-    body {
-      background-color: gray;
-    }
-    h1 {
-      font-size: 100px;
-      color: red;
-    }
-    div {
-      display: grid;
-      place-items: center;
-      height: 100vh;
-    }
-  </style>
 </html>

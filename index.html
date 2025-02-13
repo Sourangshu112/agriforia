@@ -20,7 +20,7 @@
               <input class="p-2 mt-8 rounded-xl border outline-none" type="text" name="" placeholder="Email or Userid" required="" id="email">
               <div class="relative p-2 rounded-xl border" id="password">
                 <input class="p-2 rounded-xl w-full outline-none" type="password" name="password" placeholder="Password" required="" id="rpassword">
-				<image src="eye.svg">
+				<image src="images/eye.svg" id="eye">
               </div>
               <button id="spin" class="bg-[#024E1B] rounded-xl text-white py-2 hover:scale-105 duration-300">
               Login
@@ -34,7 +34,7 @@
             </div>
       
             <button class="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 text-black">
-              <image src="google_logo.png" id="icon">
+              <image src="images/google_logo.png" id="icon">
               Login with Google
             </button>
       
@@ -50,9 +50,23 @@
       
           <!-- image -->
 			<div class="md:block hidden w-1/2">
-				<img class="rounded-2xl" src="farmer1.jpg">
+				<img class="rounded-2xl" src="images/farmer1.jpg">
 			</div>
           </div>
       </section>
+      <script>
+        let show = false;
+        const field = document.getElementById('rpassword')
+        const button = document.getElementById('eye');
+        button.addEventListener('click',(event)=>{
+          if (show) {
+            show = false;
+            field.type = "password";
+          }else {
+            show = true;
+            field.type = "text";
+          }
+        })
+      </script>
 </body>
 </html>

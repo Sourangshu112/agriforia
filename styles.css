@@ -1,0 +1,48 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  padding: 15px;
+}
+
+.banner {
+  background: url("images/farm.jpg") no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 50px 0;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: Arial;
+}
+
+.categories,
+.products {
+  margin-top: 30px;
+}
+
+.category-card,
+.product-card {
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+  background: #f8f9fa;
+}
+
+.category-card img,
+.product-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.price {
+  font-weight: bold;
+  color: green;
+}
+
+.footer {
+  margin-top: 30px;
+}

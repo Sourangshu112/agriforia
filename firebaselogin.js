@@ -34,7 +34,7 @@ signIn.addEventListener("click", (event) => {
       alert("Login is successfull");
       const user = userCredential.user;
       localStorage.setItem("loggedInUserId", user.uid);
-      window.location.href = "homepage.html";
+      window.location.href = "https://agroforiahomepage.vercel.app/";
     })
     .catch((error) => {
       const errorCode = error.code;
